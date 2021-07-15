@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1097979836504",
+    "project_id": "remote-phone-634bc",
+    "storage_bucket": "remote-phone-634bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097979836504:android:928ef2deb4e47736de322d",
+        "android_client_info": {
+          "package_name": "com.lacedon.remotephone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097979836504-dnv6j5os1r50oj57kn8iv9jngnpuhc5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lacedon.remotephone",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1097979836504-vsg1eqqqb0mv1vpq5k3776j5tgc5u9a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpDNil7R0OY_nEVsJJHGL_JouBZTa214I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097979836504-vsg1eqqqb0mv1vpq5k3776j5tgc5u9a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
