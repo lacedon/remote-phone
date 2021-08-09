@@ -7,7 +7,7 @@ export function useStorageSignIn(): { userInfo: User | null } {
     GoogleSignin.configure();
 
     GoogleSignin.signIn().then(
-      (userInfo) => setUserInfo(userInfo),
+      (newUserInfo) => setUserInfo(newUserInfo),
       (error) => {
         console.log(error.message);
         console.error(error);

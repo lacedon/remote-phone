@@ -1,4 +1,4 @@
-package com.rntestsms;
+package com.lacedon.remotephone;
 
 import com.facebook.react.ReactActivity;
 

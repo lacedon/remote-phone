@@ -13,27 +13,9 @@ import { SMSList } from '../modules/sms-list';
 const Section: React.FC<{ title: string }> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}
-      >
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}
-      >
-        {children}
-      </Text>
+    <View style={[styles.sectionContainer, { color: isDarkMode ? Colors.white : Colors.black }]}>
+      <Text style={[styles.sectionTitle]}>{title}</Text>
+      <Text style={[styles.sectionDescription, { color: isDarkMode ? Colors.light : Colors.dark }]}>{children}</Text>
     </View>
   );
 };

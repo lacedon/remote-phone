@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { Item } from '../use-sms-list';
-import { styles } from './styles';
+import { useStyles } from './styles';
 
 export const SMSMessageItem: React.FC<{ item: Item }> = ({ item }) => {
+  const styles = useStyles();
+
   return (
     <View style={styles.item}>
       <View style={styles.header}>
@@ -13,11 +15,11 @@ export const SMSMessageItem: React.FC<{ item: Item }> = ({ item }) => {
           {item.personId ? <Text style={styles.fromPhone}>({item.address})</Text> : null}
         </View>
 
-        <Text>
+        <Text style={styles.date}>
           {item.date.toDateString()} {item.date.toTimeString().slice(0, 8)}
         </Text>
       </View>
-      <Text>{item.body}</Text>
+      <Text style={styles.message}>{item.body}</Text>
     </View>
   );
 };

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
+
+import { useStyles } from './use-styles';
 
 function renderValue(value: unknown): string {
   try {
@@ -9,10 +11,7 @@ function renderValue(value: unknown): string {
   }
 }
 
-export const Debug: React.FC<{ value: unknown }> = ({ value }) => <Text style={styles.text}>{renderValue(value)}</Text>;
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: 'monospace',
-  },
-});
+export const Debug: React.FC<{ value: unknown }> = ({ value }) => {
+  const styles = useStyles();
+  return <Text style={styles.text}>{renderValue(value)}</Text>;
+};
