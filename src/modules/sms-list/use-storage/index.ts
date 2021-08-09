@@ -1,24 +1,29 @@
 import * as React from 'react';
 import { GoogleSignin, statusCodes, User } from '@react-native-google-signin/google-signin';
 
-export function useStorageSignIn(): { userInfo: User | null } {
+export function useStorageSignIn(): { userInfo: User | null; error: Error | null } {
   const [userInfo, setUserInfo] = React.useState<User | null>(null);
+  const [errorMessage, setError] = React.useState<Error | null>(null);
+
   React.useEffect(() => {
     GoogleSignin.configure();
 
-    GoogleSignin.signIn().then(
+    GoogleSignin.signInSilently().then(
       (newUserInfo) => setUserInfo(newUserInfo),
-      (error) => {
-        console.log(error.message);
-        console.error(error);
-        if (error.code === statusCodes.SIGN_IN_REQUIRED) {
-          // user has not signed in yet
+      async (signInSilentylError) => {
+        if (signInSilentylError.code === statusCodes.SIGN_IN_REQUIRED) {
+          try {
+            const newUserInfo = await GoogleSignin.signIn();
+            setUserInfo(newUserInfo);
+          } catch (signInError) {
+            setError(signInError);
+          }
         } else {
-          // some other error
+          setError(signInSilentylError);
         }
       },
     );
   }, []);
 
-  return { userInfo };
+  return { userInfo, error: errorMessage };
 }

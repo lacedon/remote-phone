@@ -1,14 +1,14 @@
-import { StyleSheet, useColorScheme } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import * as React from 'react';
+import * as ReactNative from 'react-native';
 
 export function useStyles() {
-  const isDarkMode = useColorScheme() === 'dark';
-  const textColor = isDarkMode ? Colors.light : Colors.dark;
-
-  return StyleSheet.create({
-    text: {
-      fontFamily: 'monospace',
-      color: textColor,
-    },
-  });
+  return React.useMemo(
+    () =>
+      ReactNative.StyleSheet.create({
+        text: {
+          fontFamily: 'monospace',
+        },
+      }),
+    [],
+  );
 }

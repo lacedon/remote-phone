@@ -1,12 +1,12 @@
 import React from 'react';
-import { DeviceEventEmitter } from 'react-native';
+import * as ReactNative from 'react-native';
 
 export function useSMSDelivery() {
   React.useEffect(() => {
-    DeviceEventEmitter.addListener('sms_onDelivery', (msg) => {
+    ReactNative.DeviceEventEmitter.addListener('sms_onDelivery', (msg) => {
       console.log(msg);
     });
 
-    return () => DeviceEventEmitter.removeAllListeners('sms_onDelivery');
+    return () => ReactNative.DeviceEventEmitter.removeAllListeners('sms_onDelivery');
   });
 }

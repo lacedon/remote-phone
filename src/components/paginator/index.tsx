@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import * as ReactNative from 'react-native';
+
+import { Text } from '@/components/text';
 
 export const Paginator: React.FC<{
   value?: number;
@@ -17,15 +19,19 @@ export const Paginator: React.FC<{
   const lastPage = typeof count === 'number' ? Math.floor(count / itemPerPage) : null;
 
   return (
-    <View style={styles.paginator}>
-      <Button disabled={value <= firstPage} onPress={decrease} title="Back" />
+    <ReactNative.View style={styles.paginator}>
+      <ReactNative.Button disabled={value <= firstPage} onPress={decrease} title="Back" />
       <Text>{page + 1}</Text>
-      <Button disabled={typeof lastPage === 'number' && page >= lastPage} onPress={increase} title="Forward" />
-    </View>
+      <ReactNative.Button
+        disabled={typeof lastPage === 'number' && page >= lastPage}
+        onPress={increase}
+        title="Forward"
+      />
+    </ReactNative.View>
   );
 };
 
-const styles = StyleSheet.create({
+const styles = ReactNative.StyleSheet.create({
   paginator: {
     flexDirection: 'row',
     justifyContent: 'center',

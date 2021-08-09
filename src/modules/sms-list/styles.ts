@@ -1,18 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-  },
   error: {
     color: '#f090a0',
     textAlign: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    padding: 4,
-    marginBottom: 8,
   },
   item: {
     marginTop: 4,

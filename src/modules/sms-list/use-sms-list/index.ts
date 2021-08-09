@@ -66,7 +66,7 @@ export function useSMSList({
         setIsLoading(false);
       },
     );
-  }, [defaultBox, defaultFrom, maxCount]);
+  }, [box, indexFrom, maxCount]);
 
   return {
     indexFrom,
